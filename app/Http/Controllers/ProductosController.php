@@ -44,7 +44,7 @@ class ProductosController extends Controller
         } 
         
         Productos::Insert($datosProductos);
-        return response()->json($datosProductos); 
+        return redirect('crud_tienda/productos')->with('mensaje', 'Producto Agregado con Exito!');
     }
 
     /**
@@ -96,7 +96,7 @@ class ProductosController extends Controller
              Productos::destroy($id);
         }
        
-        return redirect('crud_tienda/productos');
+        return redirect('crud_tienda/productos')->with('mensaje', 'Producto eliminado con Exito!');;
 
     }
 }

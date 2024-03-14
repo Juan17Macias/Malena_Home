@@ -1,5 +1,11 @@
 <h1>Mostrando todos los registros de la Base de Datos </h1>
 
+@if(Session::has('mensaje'))
+{{Session::get('mensaje')}}
+
+@endif
+
+
 <a href="{{url('crud_tienda/productos/create')}}"> Crear nuevo producto</a>
 <br>
 <div

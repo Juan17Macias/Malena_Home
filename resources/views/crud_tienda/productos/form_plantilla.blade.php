@@ -20,7 +20,8 @@
 <input type="file" name="pr_imagen" id="imagen" value="">
 <br>
 
-<input type="submit" Value="Guardar Datos" >
+{{-- El $modo es la forma de cambiar los datos dinamicamente --}}
+<input type="submit" Value="{{ $modo }} Datos" >
 
 <br>
 

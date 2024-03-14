@@ -4,6 +4,6 @@
 @csrf 
 {{method_field ('PATCH') }}
 
-@include('crud_tienda/productos.form_plantilla')
+@include('crud_tienda/productos.form_plantilla',['modo'=>'Editar'])
 </form>
 
