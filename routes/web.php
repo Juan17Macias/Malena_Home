@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//  Esta ruta es solo para una la que ustiliza resource es en general para el controllador.
+// Route::get('/crud_tienda/productos/create',[ProductosController::class, 'create']);
+
+Route::resource('/crud_tienda/productos',ProductosController::class);

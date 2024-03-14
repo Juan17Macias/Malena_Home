@@ -14,33 +14,33 @@ font-weight: bold;
 } 
 
 .informacion{
-    height: 60vh;
-    color: white;
     margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-     
-}
-.informacion_text { grid-area: 1 / 1 / 2 / 2; 
-    background-color: black;
+    margin-bottom: 50px ;
+    color: white;
     text-align: justify;
-    padding: 20px;
-    font-size: 1.2rem;
-    /*texto no se salga del contenedor */
-    overflow: hidden;
-
 }
-.informacion_img { 
-    text-align: center;
-    grid-area: 1 / 2 / 2 / 3;
-    
+
+.informacion_text{
+    background: black;
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+    font-size: large;
+}
+
+.informacion_icon{
+    padding: 10px  ;
+}
+.informacion_icon i{
+    color: rgb(255, 255, 255);
+    font-size: 7rem;
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
 }
 .informacion_img img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
 }
+
+

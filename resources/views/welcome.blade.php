@@ -6,6 +6,7 @@
     <title>Malena Home</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/css/styles.css">
     <!-- Estilos cards -->
@@ -111,18 +112,31 @@
 
 </section>
 
-<section class=" container informacion">
+<section class="container informacion">
+    <div class="row">
+        <div class="col-lg-6 bg-black">
+            <div class="informacion_text">
+                <p>En Malena Home, somos una familia emprendedora  de dos hermanos Andres Y Juan Macias Noguera dedicada a ofrecerte lo mejor en productos diseñados a tu gusto. Nos esforzamos por brindarte artículos de alta calidad que reflejen tu estilo y personalidad en cada detalle. ¡Únete a nuestra familia y haz de tu hogar un lugar único con Malena Home!</p>
+                <p>
+                El nombre de su empresa surgió de una fuente especial de inspiración: Malena, la adorable hija de Juan . Para ellos, Malena representaba todo lo que querían lograr: un futuro brillante, lleno de amor y prosperidad. Así nació Malena Home, un tributo al amor fraternal, la humildad y el deseo de superación.
+                </p>
 
-<div class="informacion_text">
-     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quod ab repellat, voluptate consectetur quasi voluptates eos rerum commodi quia molestiae velit dolor animi tempore quis qui vitae corrupti hic?
-
-     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quod ab repellat, voluptate consectetur quasi voluptates eos rerum commodi quia molestiae velit dolor animi tempore quis qui vitae corrupti hic?
-
-     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quod ab repellat, voluptate consectetur quasi voluptates eos rerum commodi quia molestiae velit dolor animi tempore quis qui vitae corrupti hic?
-</div>
-<div class="informacion_img"><img src="/images/fondo_section.jpg" alt=""></div>
-
+                <p>Hoy en día, Malena Home sigue creciendo, llevando consigo la historia de dos hermanos que, contra viento y marea, decidieron construir un futuro mejor para ellos y sus seres queridos. Su legado perdura en cada producto que ofrecen, recordándonos que el amor y la familia son los cimientos sobre los cuales se construye el verdadero éxito.</p>
+            </div>
+        </div>
+        <div class="col-lg-1 bg-black">
+            <div class="informacion_icon">
+                <i class="bi bi-bag-check"></i>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="informacion_img">
+                <img src="/images/fondo_section.jpg" alt="">
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <footer class="bg-dark text-light text-center py-4">
     <div class="container">
