@@ -34,7 +34,24 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validar datos que lleguen de formulario de creacion de productos todos deben esatr llenos y si no mostrar mensaje, pero no borrar los datos que ya se han llenado
+        $mensaje = [
+            'required' => 'El :attribute es requerido', 
+            'pr_nombre.required' => 'El nombre del producto es requerido',
+            'pr_descripcion.required' => 'La descripcion del producto es requerida',
+            'pr_catidad.required' => 'La catidad del producto es requerida',
+            'pr_precio.required' => 'El precio del producto es requerido',
+            'pr_imagen.required' => 'La imagen del producto es requerida'
+        ];
+        $datos = [
+            'pr_nombre' => 'required|string|max:100',
+            'pr_descripcion' => 'required|string|max:100',
+            'pr_cantidad' => 'required|string|max:100',
+            'pr_precio' => 'required|string|max:100',
+            'pr_imagen' => 'required|max:10000|mimes:jpeg,png,jpg'
+        ];
+                
+            $this->validate($request, $datos, $mensaje);
         // $datosProductos = request()->all();
         $datosProductos = request()->except('_token');
        
@@ -69,7 +86,40 @@ class ProductosController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-    {
+    {   
+
+        $mensaje = [
+            'required' => 'El :attribute es requerido', 
+            'pr_nombre.required' => 'El nombre del producto es requerido',
+            'pr_descripcion.required' => 'La descripcion del producto es requerida',
+            'pr_catidad.required' => 'La catidad del producto es requerida',
+            'pr_precio.required' => 'El precio del producto es requerido',
+        ];
+        $datos = [
+            'pr_nombre' => 'required|string|max:100',
+            'pr_descripcion' => 'required|string|max:100',
+            'pr_cantidad' => 'required|string|max:100',
+            'pr_precio' => 'required|string|max:100',
+
+        ];
+               
+        if($request->hasFile('pr_imagen')){
+            $datos = [
+
+                'pr_imagen' => 'required|max:10000|mimes:jpeg,png,jpg'
+            ];
+        
+            $mensaje = [
+                'pr_imagen.required' => 'La imagen del producto es requerida'
+            ];
+        
+        }
+
+
+            $this->validate($request, $datos, $mensaje);
+
+
+        
         $datosProductos = request()->except(['_token','_method']);
 
         if($request->hasFile('pr_imagen')){
@@ -81,7 +131,8 @@ class ProductosController extends Controller
        Productos::where('id', '=' ,$id)->update($datosProductos);
         // Devolverme al formulario despues de actualizar el product
         $producto=Productos::FindOrFail($id);
-        return view('crud_tienda/productos.edit', compact('producto'));
+        // return view('crud_tienda/productos.edit', compact('producto')); // Si se requiere dejar en la misma pagina 
+        return redirect('crud_tienda/productos')->with('mensaje', 'Producto modificado con Exito!');;
         
     }
 
@@ -96,7 +147,7 @@ class ProductosController extends Controller
              Productos::destroy($id);
         }
        
-        return redirect('crud_tienda/productos')->with('mensaje', 'Producto eliminado con Exito!');;
+        return redirect('crud_tienda/productos')->with('mensaje', 'Producto eliminado con Exito!');
 
     }
 }
